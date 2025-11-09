@@ -109,14 +109,7 @@ def create_remdiation_commit():
     # Clean up the app.config file in the working directory
     os.remove(os.path.join(REPO_DIR, "app.config"))
     print("🗑️ app.config deleted from working directory (still in history).")
-
-def display_confirm():
-    print("\n=======================================================")
-    print(f"Repository setup complete in: ./{REPO_DIR}")
-    print("This repository now contains several simulated secrets ")
-    print("across its commit history for your scanning program to find.")
-    print("=======================================================")
-
+    
 def main():
     """Main execution function."""
     print("--- Git Repository Creation Script Started ---")
@@ -129,7 +122,11 @@ def main():
         create_leak_in_message_commit()
         create_remdiation_commit()
 
-        display_confirm()
+        print("\n=======================================================")
+        print(f"Repository setup complete in: ./{REPO_DIR}")
+        print("This repository now contains several simulated secrets ")
+        print("across its commit history for your scanning program to find.")
+        print("=======================================================")
 
     except Exception as e:
         print(f"\nScript encountered a fatal error: {e}")
