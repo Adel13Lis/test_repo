@@ -2,11 +2,6 @@ import os
 import subprocess
 import shutil
 
-REPO_DIR = "dummy-repo-for-scanner"
-API_KEY = "sk-live-a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6"
-PASSWORD = "HardcodedSecurePassword123!"
-DB_URL = "postgres://admin:Password@127.0.0.1:5432/production"
-
 def run_git_command(command, cwd=REPO_DIR):
     """Utility function to run a git command and handle errors."""
     try:
