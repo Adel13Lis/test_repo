@@ -2,6 +2,15 @@ import os
 import subprocess
 import shutil
 
+from dotenv import load_dotenv 
+
+load_dotenv()
+
+REPO_DIR = os.getenv("REPO_DIR", "dummy-repo-for-scanner")
+API_KEY = os.getenv("API_KEY")
+PASSWORD = os.getenv("PASSWORD")
+DB_URL = os.getenv("DB_URL")
+
 def run_git_command(command, cwd=REPO_DIR):
     """Utility function to run a git command and handle errors."""
     try:
